@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<xsl:stylesheet version="1.0" 
+<xsl:stylesheet version="2.0" 
                 exclude-result-prefixes="ws xsi"
                 xmlns:ws="urn:com.workday/workersync"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
