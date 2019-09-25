@@ -6,9 +6,9 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:output indent="yes" method="text" encoding="utf-8" omit-xml-declaration="yes"/>
+	<xsl:variable name="date" select="format-dateTime(current-dateTime(), '[Y0001][M01][D01]')"/>
     <xsl:template match="*">
-        <xsl:variable name="outfile">/somelocation/test.out<xsl:variable>
-        <xsl:result-document href="{$outfile}" method="text">
+        <xsl:result-document href="Demo_Person_File_{$date}.txt" method="text">
             <xsl:text>Full Name,Employee Status,Employee Number,Last Name,First Name,Middle Name,Gender,Business Email,Business Title,Hire Date,Business Unit,Department</xsl:text>
             <xsl:text>&#xa;</xsl:text>
             <xsl:for-each select="/ws:Worker_Sync/ws:Worker">
@@ -18,9 +18,5 @@
                 </xsl:if>
              </xsl:for-each>
         </xsl:result-document>
-    </xsl:template>
-    <xsl:template match="/ws:Worker_Sync/ws:Worker">
-        <xsl:apply-templates/>
-        <xsl:text>&#xa;</xsl:text>
     </xsl:template>
 </xsl:stylesheet>
