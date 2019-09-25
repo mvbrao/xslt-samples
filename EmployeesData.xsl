@@ -6,7 +6,7 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:output indent="yes" method="text" encoding="utf-8" omit-xml-declaration="yes"/>
-	<xsl:variable name="date" select="format-dateTime(current-dateTime(), '[Y0001][M01][D01]')"/>
+    <xsl:variable name="date" select="format-dateTime(current-dateTime(), '[Y0001][M01][D01]')"/>
     <xsl:template match="*">
         <xsl:result-document href="Demo_Person_File_{$date}.txt" method="text">
             <xsl:text>Full Name,Employee Status,Employee Number,Last Name,First Name,Middle Name,Gender,Business Email,Business Title,Hire Date,Business Unit,Department</xsl:text>
